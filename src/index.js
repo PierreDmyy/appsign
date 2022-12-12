@@ -34,7 +34,7 @@ class App extends Component {
 
 
       <div>
-        <div>
+        <div className='vertical-center'>
           <Button className={styles.buttons} variant="outlined" onClick={this.clear}>
             Supprimer
           </Button>

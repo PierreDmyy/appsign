@@ -29,6 +29,13 @@ body {
 width:100%;
 }
 
+.vertical-center {
+  margin:0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%)
+}
   
   .sigImage {
     background-size: 100px 50px;
