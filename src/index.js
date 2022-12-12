@@ -23,14 +23,17 @@ class App extends Component {
   render() {
     let { trimmedDataURL } = this.state
     return <div className={styles.container}>
-      {trimmedDataURL
-        ? <img alt='sign' className={styles.sigImage}
-          src={trimmedDataURL} />
-        : null}
       <div className={styles.sigContainer}>
         <SignaturePad canvasProps={{ className: styles.sigPad }}
           ref={(ref) => { this.sigPad = ref }} />
       </div>
+      <br></br>
+      {trimmedDataURL ?
+      <>
+       <h3>Signature PNG :</h3>  
+      <img alt='sign' className={styles.sigImage} src={trimmedDataURL} />
+      </>
+        : null }
       <div>
         <div className='vertical-center container'>
           <Button className={styles.buttons} variant="outlined" onClick={this.clear}>
