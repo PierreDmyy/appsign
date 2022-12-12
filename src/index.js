@@ -23,29 +23,30 @@ class App extends Component {
   render() {
     let { trimmedDataURL } = this.state
     return <div className={styles.container}>
-      <div className={styles.sigContainer}>
-        <SignaturePad canvasProps={{ className: styles.sigPad }}
-          ref={(ref) => { this.sigPad = ref }} />
-      </div>
-      <br></br>
-      {trimmedDataURL ?
-      <>
-       <h3>Signature PNG :</h3>  
-      <img alt='sign' className={styles.sigImage} src={trimmedDataURL} />
-      </>
-        : null }
-      <div>
-        <div className='vertical-center container'>
+         <div className='vertical-center container'>
           <Button className={styles.buttons} variant="outlined" onClick={this.clear}>
-            Supprimer
+            Effacer
           </Button>
         </div>  
         <div>
           <br></br>
           <Button className={styles.buttons} variant="contained" color="success" onClick={this.trim}>
-            Enregistrer
+            Valider
           </Button>
         </div>
+      <div className={styles.sigContainer}>
+        <SignaturePad canvasProps={{ className: styles.sigPad }}
+          ref={(ref) => { this.sigPad = ref }} />
+      </div>
+      <br></br>
+      
+      <div>
+        {trimmedDataURL ?
+      <>
+       <h3>Signature PNG :</h3>  
+      <img alt='sign' className={styles.sigImage} src={trimmedDataURL} />
+      </>
+        : null }
 
       </div>
     </div>
