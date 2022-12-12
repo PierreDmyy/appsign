@@ -31,10 +31,8 @@ class App extends Component {
         <SignaturePad canvasProps={{ className: styles.sigPad }}
           ref={(ref) => { this.sigPad = ref }} />
       </div>
-
-
       <div>
-        <div className='vertical-center'>
+        <div className='vertical-center container'>
           <Button className={styles.buttons} variant="outlined" onClick={this.clear}>
             Supprimer
           </Button>

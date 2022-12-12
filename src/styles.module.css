@@ -13,8 +13,8 @@ body {
   }
   
   .sigContainer {
-    width: 80%;
-    height: 80%;
+    width: 60%;
+    height: 50%;
     margin: 0 auto;
     background-color: #fff;
   }
@@ -25,11 +25,9 @@ body {
   }
   
 
-.buttons {
-width:100%;
-}
 
 .vertical-center {
+  width: 150px;
   margin:0;
   position: absolute;
   top: 50%;
