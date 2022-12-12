@@ -24,7 +24,7 @@ class App extends Component {
     let { trimmedDataURL } = this.state
     return <div className={styles.container}>
       {trimmedDataURL
-        ? <img className={styles.sigImage}
+        ? <img alt='sign' className={styles.sigImage}
           src={trimmedDataURL} />
         : null}
       <div className={styles.sigContainer}>
