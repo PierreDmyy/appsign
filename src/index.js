@@ -32,20 +32,21 @@ class App extends Component {
           ref={(ref) => { this.sigPad = ref }} />
         <Container fluid className="p-0">
           <Row>
-            <Col className='noPadding' xs={4}><Button variant="outlined" onClick={this.clear}>
+            <Col className='noPadding' sm={4} xs={4}><Button color="error" variant="outlined" onClick={this.clear}>
               Effacer
             </Button></Col>
-            <Col xs={4}></Col>
+            <Col sm={4} xs={4}></Col>
             {trimmedDataURL ?
               <>
-              <Col xs={4}>
+              <Col sm={4} xs={4}>
                 <Button variant="contained" color="success" className="float-end" download="signature_fiche_d'inscription" href={trimmedDataURL}>Télécharger</Button>
                 </Col>
               </>
-              : <Col xs={4}> <Button className="float-end" variant="contained" color="success" onClick={this.trim}>
+              : <Col sm={4}  xs={4}> <Button className="float-end" variant="contained" color="success" onClick={this.trim}>
                 Valider
               </Button></Col>
             }
+              <p>{trimmedDataURL}</p>
 
           </Row>
         </Container>
