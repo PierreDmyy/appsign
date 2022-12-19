@@ -12,3 +12,9 @@ code {
     monospace;
 }
 
+.buttons {
+  position: absolute!important;
+  z-index: 10!important;
+  top: 70%!important;
+  text-align: center!important;
+ }

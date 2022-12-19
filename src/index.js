@@ -1,7 +1,14 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import SignaturePad from 'react-signature-canvas'
-import ButtonGroup from '@mui/material/Button';
+import Button from '@mui/material/Button';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+
+import Col from 'react-bootstrap/Col';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 import styles from './styles.module.css'
 
 class App extends Component {
@@ -19,34 +26,29 @@ class App extends Component {
   }
   render() {
     let { trimmedDataURL } = this.state
-    return <div className={styles.container}> 
+    return <div className={styles.container}>
       <div className={styles.sigContainer}>
         <SignaturePad canvasProps={{ className: styles.sigPad }}
           ref={(ref) => { this.sigPad = ref }} />
-      </div>
-      <div className="d-grid gap-2">
-      <ButtonGroup
-  disableElevation
-  variant="contained"
-  aria-label="Disabled elevation buttons"
->
-  <Button>One</Button>
-  <Button>Two</Button>
-</ButtonGroup>
-              <Button className={styles.buttons} variant="outlined" onClick={this.clear}>
-            Effacer
-          </Button>
-          <Button className={styles.buttons} variant="contained" color="success" onClick={this.trim}>
-            Valider
-          </Button>
-          </div>
-      <div>
-        {trimmedDataURL ?
-      <>
-       <h3>Signature PNG :</h3>  
-      <img alt='sign' className={styles.sigImage} src={trimmedDataURL} />
-      </>
-        : null }
+        <Container fluid className="p-0">
+          <Row>
+            <Col className='noPadding' xs={4}><Button variant="outlined" onClick={this.clear}>
+              Effacer
+            </Button></Col>
+            <Col xs={4}></Col>
+            {trimmedDataURL ?
+              <>
+              <Col xs={4}>
+                <Button variant="contained" color="success" className="float-end" download="signature_fiche_d'inscription" href={trimmedDataURL}>Télécharger</Button>
+                </Col>
+              </>
+              : <Col xs={4}> <Button className="float-end" variant="contained" color="success" onClick={this.trim}>
+                Valider
+              </Button></Col>
+            }
+
+          </Row>
+        </Container>
       </div>
     </div>
   }
