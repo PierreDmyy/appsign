@@ -28,7 +28,7 @@ class App extends Component {
     let { trimmedDataURL } = this.state
     return <div className={styles.container}>
       <div className={styles.sigContainer}>
-        <SignaturePad canvasProps={{ className: styles.sigPad }}
+        <SignaturePad clearOnResize={false} canvasProps={{ className: styles.sigPad }}
           ref={(ref) => { this.sigPad = ref }} />
         <Container fluid className="p-0">
           <Row>
